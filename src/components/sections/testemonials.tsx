@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export default function TestimonialsCarousel() {
     // Testimonials data exactly matching the visual content rules
     const testimonials = [
@@ -26,21 +24,8 @@ export default function TestimonialsCarousel() {
         }
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    // Responsive slide navigation logic handles boundary frames cleanly
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) =>
-            // Desktop checks if we can shift by pairs, mobile shifts single
-            prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-        );
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-        );
-    };
+    // Testimonials carousel currently renders as a continuous marquee.
+    // Navigation state is not needed for this version of the section.
 
     return (
         <section className="w-full bg-[#3C222D] text-white px-6 py-20 sm:px-10 md:px-16 lg:px-24 overflow-hidden">
@@ -74,7 +59,7 @@ export default function TestimonialsCarousel() {
                     {/* Right Wing Navigation Slider Buttons */}
                     <div className="flex items-center gap-3 self-end sm:self-auto">
                         <button
-                            onClick={nextSlide}
+                            type="button"
                             className="gap-3 inline-flex items-center justify-center font-['Anton'] text-[20px] text-white bg-transparent border border-[#D4FF00] px-6 py-2 uppercase tracking-widest hover:bg-[#D4FF00] hover:text-[#3C222D] transition-all duration-300 group"
                         >
                             VIEW MORE <img src="icons/SVG.png" alt="Next" className="w-5 h-5 object-contain group-hover:translate-x-1 transition-transform duration-300" />
