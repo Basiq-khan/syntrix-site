@@ -1,13 +1,25 @@
+import { Link } from 'react-router-dom'
+
+const pageLinks = [
+  { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Our Services', to: '/services' },
+  { label: 'Portfolio', to: '/portfolio' },
+  { label: 'Blog', to: '/blog' },
+  { label: 'FAQs', to: '/faqs' },
+  { label: 'Contact Us', to: '/contact' },
+]
+
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#24151B] text-white pt-20 pb-6 overflow-hidden relative">
-      <div className="max-w-[1400px] mx-auto">
-        
+    <footer className="w-full bg-[#24151B] text-white pt-12 sm:pt-16 md:pt-20 pb-6 overflow-hidden relative">
+      <div className="mx-auto px-6 sm:px-10 md:px-16 lg:px-24">
+
         {/* ========================================================= */}
         {/* TOP SECTION: Links, Contacts and Brand Details Grid        */}
         {/* ========================================================= */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-28 items-start mb-16">
-          
+
           {/* Column 1: Brand Logo & Office Addresses (lg:col-span-3) */}
           <div className="lg:col-span-3 flex flex-col items-start text-left">
             {/* Main Brand Vector Logo */}
@@ -36,11 +48,11 @@ export default function Footer() {
           <div className="lg:col-span-2 flex flex-col items-start text-left sm:pl-4">
             <h4 className="font-['Anton'] text-[32px] text-[#EAF261] uppercase mb-6">PAGES</h4>
             <ul className="flex flex-col gap-3 font-['Inter_Variable'] text-[16px] text-[#AFAFAF] font-light">
-              {['Home', 'About Us', 'Our Services', 'Portfolio', 'FAQs', 'Contact Us'].map((page) => (
-                <li key={page}>
-                  <a href={`#${page.toLowerCase().replace(' ', '-')}`} className="hover:text-[#FF5533] transition-colors duration-200">
-                    {page}
-                  </a>
+              {pageLinks.map((page) => (
+                <li key={page.label}>
+                  <Link to={page.to} className="hover:text-[#FF5533] transition-colors duration-200">
+                    {page.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -105,7 +117,8 @@ export default function Footer() {
       {/* ========================================================= */}
       <div className="w-full relative overflow-hidden bg-transparent my-4 pointer-events-none select-none">
         {/* Style injection for seamless text transitions */}
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           @keyframes footerTextMarquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -118,13 +131,10 @@ export default function Footer() {
         <div className="flex w-max whitespace-nowrap animate-footer-text">
           {/* Loop Text block duplicated for infinite cycle visualization */}
           {[...Array(4)].map((_, index) => (
-            <span 
+            <span
               key={index}
-              className="font-['Anton'] text-[70px] sm:text-[100px] md:text-[140px] lg:text-[170px] uppercase leading-none tracking-wider pr-12 select-none"
-              style={{
-                WebkitTextStroke: '1px #FD683E',
-                WebkitTextFillColor: 'transparent',
-              }}
+              className="font-['Anton'] text-[70px] sm:text-[100px] md:text-[140px] lg:text-[170px] uppercase leading-none tracking-wider pr-12 select-none text-white"
+
             >
               SYNTRIX CREATIVE
             </span>
@@ -137,7 +147,7 @@ export default function Footer() {
       {/* ========================================================= */}
       <div className="w-full border-t border-white/5 pt-6 mt-4">
         <div className="max-w-[1400px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-          
+
           <span className="font-['Inter_Variable'] text-[16px] text-white font-light">
             Syntrix Creative Agency © 2026 All rights reserved
           </span>

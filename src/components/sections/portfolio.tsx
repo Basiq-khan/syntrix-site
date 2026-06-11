@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export function Portfolio() {
     // Saare cards ka aspect ratio aur sizes ab exact IDENTICAL (barabar) hain
     const projects = [
@@ -39,19 +41,15 @@ export function Portfolio() {
     ];
 
     return (
-        <section className="w-full py-20 md:py-28 px-4 sm:px-8 md:px-12 lg:px-16 overflow-hidden"
+        <section className="w-full pb-10 pt-35 px-4 sm:px-8 md:px-12 lg:px-16 overflow-hidden"
             style={{ background: "url('/885c187d3a8a6f56d114d0a8d2481bf15c7a1d0a.jpg') center/cover no-repeat" }}
         >
-
-            {/* -------------------------------------------------------- */}
-            {/* HEADER ROW: Unchanged (Strictly preserved) */}
-            {/* -------------------------------------------------------- */}
-            <div className="w-full flex flex-col md:flex-row md:items-start justify-between gap-6 mb-16 md:mb-32">
+            <div className="w-full flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 md:mb-20">
                 <div className="max-w-[850px] text-left">
                     <h2 className="font-['Anton'] font-normal text-[40px] sm:text-[52px] md:text-[75px] leading-[1.1] text-[#3C222D] uppercase tracking-wide">
 
                         {/* Star Icon and Tag injected inline to stay inside the first line */}
-                        <span className="inline-flex items-center gap-2 mr-4 md:mr-6 vertical-middle">
+                        <span className="inline-flex items-center gap-2 mr-4 md:mr-6">
                             <span
                                 className="inline-block text-[#FF5533] text-[35px] sm:text-[40px] md:text-[50px] animate-spin shrink-0 select-none leading-none"
                                 style={{ animationDuration: '3s' }}
@@ -72,8 +70,8 @@ export function Portfolio() {
                     <p className="font-['Inter_Variable'] text-[14px] sm:text-[15px] leading-relaxed text-[#555555]">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Congue optent placerat neque senectus omet cras efficitur. Aptent malesuada.
                     </p>
-                    <a
-                        href="#contact"
+                    <Link
+                        to="/contact"
                         className="w-2/5 inline-flex items-center justify-center font-['Anton'] font-normal text-[14px] sm:text-[15px] text-[#3C222D] bg-transparent border-2 border-[#FF5533] px-6 py-2.5 uppercase tracking-widest hover:bg-[#FF5533] hover:text-white transition-all duration-300 gap-3"
                     >
                         CONTACT US
@@ -86,23 +84,23 @@ export function Portfolio() {
                                 className="w-full h-full object-contain mix-blend-multiply"
                             />
                         </div>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
             {/* -------------------------------------------------------- */}
             {/* PORTFOLIO GRID: 50/50 Equal Width Flexbox Split Layout */}
             {/* -------------------------------------------------------- */}
-            <div className="w-full flex flex-wrap justify-between">
+            <div className="w-full flex flex-col md:flex-row flex-wrap justify-between">
 
                 {/* .slice(0, 4) lagane se sirf pehle 4 projects hi loop honge */}
                 {projects.slice(0, 4).map((project) => (
                     <div
                         key={project.id}
-                        className={`${project.className || ''} flex flex-col group cursor-pointer mb-12 md:mb-16`}
+                        className={`${project.className || ''} flex flex-col group cursor-pointer mb-8 md:mb-16`}
                     >
                         {/* Aspect ratio identical block wrapper */}
-                        <div className="w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/5] lg:aspect-[1.1/1] overflow-hidden bg-white shadow-sm mb-5">
+                        <div className="w-full aspect-4/3 sm:aspect-3/4 md:aspect-4/5 lg:aspect-[1.1/1] overflow-hidden bg-white shadow-sm mb-5">
                             <img
                                 src={project.imgSrc}
                                 alt={project.title}
@@ -112,7 +110,7 @@ export function Portfolio() {
                         <span className="font-['Inter_Variable'] text-[11px] sm:text-[16px] uppercase tracking-[0.18em] text-[#777777] font-semibold mb-1">
                             {project.category}
                         </span>
-                        <h3 className="font-['Anton'] font-normal text-[20px] sm:text-[32px] text-[#3C222D] uppercase tracking-wide transition-colors group-hover:text-[#FF5533]">
+                        <h3 className="font-['Anton'] font-normal text-[18px] sm:text-[32px] text-[#3C222D] uppercase tracking-wide transition-colors group-hover:text-[#FF5533]">
                             {project.title}
                         </h3>
                     </div>
@@ -124,12 +122,12 @@ export function Portfolio() {
 
                 {/* LEFT CARD: Isko inline-flex items-start structure mein rakha hai without gap-60 */}
                 {/* min-h ko responsive karke chota kar diya aur padding tight kardi taaki box squeeze ho sake */}
-                <div className="w-full md:w-[45%] bg-[#3C222D] p-6 sm:p-8 md:p-10 flex flex-col justify-start min-h-[300px] md:min-h-[350px] lg:min-h-[380px] mb-12 md:mb-16">
+                <div className="w-full md:w-[45%] order-6 md:order-0 bg-[#3C222D] p-5 sm:p-8 md:p-10 flex flex-col justify-start min-h-[220px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[380px] mb-8 md:mb-16">
 
                     {/* TOP ROW: Content Wrapper */}
                     <div className="w-full text-left mb-8"> {/* mb-8 lagaya taaki niche wali row se constant distance rahe */}
                         {/* Heading: Line-height tighter aur tracking clean */}
-                        <h3 className="font-['Anton'] font-normal text-[32px] sm:text-[38px] lg:text-[44px] text-white leading-[1.05] uppercase tracking-wide mb-3">
+                        <h3 className="font-['Anton'] font-normal text-[26px] sm:text-[38px] lg:text-[44px] text-white leading-[1.05] uppercase tracking-wide mb-3">
                             OUR WORK <br />
                             <span>SPEAKS FOR ITSELF</span>
                         </h3>
@@ -160,8 +158,8 @@ export function Portfolio() {
                         </div>
 
                         {/* Right Side: Exact Lime Border Button Layout */}
-                        <a
-                            href="#all-portfolio"
+                        <Link
+                            to="/portfolio"
                             className="inline-flex items-center justify-center gap-4 font-['Anton'] text-[13px] text-white border-2 border-[#D4FF00] bg-transparent px-5 py-2.5 uppercase tracking-wider hover:bg-[#D4FF00] hover:text-[#3C222D] transition-all duration-300 group"
                         >
                             VIEW ALL PORTFOLIO
@@ -170,16 +168,16 @@ export function Portfolio() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                 </svg>
                             </div>
-                        </a>
+                        </Link>
 
                     </div>
                 </div>
 
                 {/* RIGHT CARD: Isko md:w-[48%] ya [50%] kiya hai taaki size bada ho jaye */}
                 {projects[4] && (
-                    <div className={`${projects[4].className || ''} w-full md:w-[48%] flex flex-col group cursor-pointer mb-12 md:mb-16`}>
+                    <div className={`${projects[4].className || ''} w-full md:w-[48%] order-5 md:order-0 flex flex-col group cursor-pointer mb-8 md:mb-16`}>
                         {/* Aspect ratio identical block wrapper */}
-                        <div className="w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/5] lg:aspect-[1.1/1] overflow-hidden bg-white shadow-sm mb-5">
+                        <div className="w-full aspect-4/3 sm:aspect-3/4 md:aspect-4/5 lg:aspect-[1.1/1] overflow-hidden bg-white shadow-sm mb-5">
                             <img
                                 src={projects[4].imgSrc}
                                 alt={projects[4].title}
@@ -191,7 +189,7 @@ export function Portfolio() {
                             {projects[4].category}
                         </span>
 
-                        <h3 className="font-['Anton'] font-normal text-[20px] sm:text-[32px] text-[#3C222D] uppercase tracking-wide transition-colors group-hover:text-[#FF5533]">
+                        <h3 className="font-['Anton'] font-normal text-[18px] sm:text-[32px] text-[#3C222D] uppercase tracking-wide transition-colors group-hover:text-[#FF5533]">
                             {projects[4].title}
                         </h3>
                     </div>

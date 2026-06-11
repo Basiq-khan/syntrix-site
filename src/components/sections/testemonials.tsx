@@ -23,12 +23,8 @@ export default function TestimonialsCarousel() {
             role: "Product Owner"
         }
     ];
-
-    // Testimonials carousel currently renders as a continuous marquee.
-    // Navigation state is not needed for this version of the section.
-
     return (
-        <section className="w-full bg-[#3C222D] text-white px-6 py-20 sm:px-10 md:px-16 lg:px-24 overflow-hidden">
+        <section className="w-full bg-[#3C222D] text-white px-6 py-10 sm:px-10 md:px-16 lg:px-24 overflow-hidden">
             <div className="max-w-[1400px] mx-auto flex flex-col">
 
                 {/* ========================================================= */}
@@ -95,13 +91,13 @@ export default function TestimonialsCarousel() {
                             <div
                                 key={idx}
                                 // Width configuration: Exactly 2 cards visible on desktop (calc(50% - gap)), 1 full card on mobile
-                                className="w-[280px] sm:w-[380px] md:w-[460px] lg:w-[620px] bg-[#313131] p-8 sm:p-10 md:p-12 flex flex-col justify-between min-h-[340px] sm:min-h-[320px] relative overflow-hidden rounded-sm transition-all duration-300 border border-white/5 shrink-0"
+                                className="w-[280px] sm:w-[380px] md:w-[460px] lg:w-[620px] bg-[#313131] p-5 flex flex-col justify-between min-h-[340px] sm:min-h-[320px] relative overflow-hidden rounded-sm transition-all duration-300 border border-white/5 shrink-0"
                             >
 
                                 {/* Content Area Stack */}
                                 <div className="w-full flex flex-col items-start text-left">
                                     {/* Rating Vector Starts Lineup */}
-                                    <div className="flex items-center gap-1 mb-6 text-white text-[14px]">
+                                    <div className="flex items-center gap-1 mb-3 text-[#FF5533] text-[14px]">
                                         {[...Array(item.stars)].map((_, i) => (
                                             <span key={i}>★</span>
                                         ))}
@@ -120,7 +116,7 @@ export default function TestimonialsCarousel() {
                                         <img
                                             src={item.image}
                                             alt={item.name}
-                                            className="w-12 h-12 rounded-full object-cover grayscale border border-white/10"
+                                            className="w-17 h-17 rounded-full object-cover grayscale border border-white/10"
                                         />
                                         <div className="flex flex-col text-left">
                                             <h4 className="font-['Anton'] font-normal text-[16px] uppercase tracking-wide leading-tight">

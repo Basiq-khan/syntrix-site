@@ -29,11 +29,23 @@ export default function TeamSection() {
             name: "Marcus Vance",
             role: "TECH LEAD",
             imgSrc: "/b09ba91ecd7f84cd012c24e5447278afb50785d8.jpg",
+        },
+        {
+            id: 4,
+            name: "Marcus Vance",
+            role: "TECH LEAD",
+            imgSrc: "/b09ba91ecd7f84cd012c24e5447278afb50785d8.jpg",
+        },
+        {
+            id: 5,
+            name: "Marcus Vance",
+            role: "TECH LEAD",
+            imgSrc: "/b09ba91ecd7f84cd012c24e5447278afb50785d8.jpg",
         }
     ];
 
     return (
-        <section className="w-full px-6 py-20 sm:px-10 md:px-16 lg:px-24 text-[#3C222D]"
+        <section className="w-full px-6 py-10 sm:px-10 md:px-16 lg:px-24 text-[#3C222D]"
             style={{ background: "url('/885c187d3a8a6f56d114d0a8d2481bf15c7a1d0a.jpg') center/cover no-repeat" }}
         >
             <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -140,7 +152,7 @@ export default function TeamSection() {
                                 key={member.id}
                                 onMouseEnter={() => setActiveId(member.id)}
                                 className={`relative h-full overflow-hidden cursor-pointer bg-neutral-300 transition-all duration-700 ease-out flex flex-col justify-end text-left rounded-sm
-                  ${isExpanded ? 'flex-[3.5] sm:flex-[4.5]' : 'flex-[1] lg:flex-[1.1]'}
+                  ${isExpanded ? 'flex-[3.5] sm:flex-[4.5]' : 'flex-1 lg:flex-[1.1]'}
                 `}
                             >
                                 {/* Background Image Layer */}
@@ -153,7 +165,7 @@ export default function TeamSection() {
                                 />
 
                                 {/* Dark Gradient Overlay for Typography readability */}
-                                <div className={`absolute inset-0 bg-gradient-to-t from-[#3C222D]/90 via-[#3C222D]/30 to-transparent transition-opacity duration-500
+                                <div className={`absolute inset-0 bg-linear-to-t from-[#3C222D]/90 via-[#3C222D]/30 to-transparent transition-opacity duration-500
                   ${isExpanded ? 'opacity-100' : 'opacity-40'}
                 `} />
 

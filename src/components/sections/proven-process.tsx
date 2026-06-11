@@ -43,24 +43,24 @@ export default function Provenprocess() {
   ];
 
   return (
-    <section className="w-full text-[#3C222D] px-6 py-20 sm:px-10 md:px-16 lg:px-24"
-        style={{ background: "url('/885c187d3a8a6f56d114d0a8d2481bf15c7a1d0a.jpg') center/cover no-repeat" }}
+    <section className="w-full text-[#3C222D] px-6 py-10 sm:px-10 md:px-16 lg:px-24"
+      style={{ background: "url('/885c187d3a8a6f56d114d0a8d2481bf15c7a1d0a.jpg') center/cover no-repeat" }}
     >
       <div className="max-w-[1400px] mx-auto flex flex-col">
-        
+
         {/* ========================================================= */}
         {/* TOP ROW: Title block and Description Context              */}
         {/* ========================================================= */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start mb-12 sm:mb-16">
-          
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start mb-5">
+
           {/* Header left side with spinning star icon integration */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
             <div className="flex items-center gap-2 mb-3">
               <div className="relative shrink-0">
-                <img 
-                  src="/icons/dark-star.png" 
-                  alt="Star" 
-                  className="w-8 h-8 object-contain animate-spin" 
+                <img
+                  src="/icons/dark-star.png"
+                  alt="Star"
+                  className="w-8 h-8 object-contain animate-spin"
                   style={{ animationDuration: '4s' }}
                 />
               </div>
@@ -68,7 +68,7 @@ export default function Provenprocess() {
                 OUR PROVEN PROCESS
               </span>
             </div>
-            
+
             <h2 className="font-['Anton'] font-normal text-[44px] sm:text-[56px] md:text-[64px] leading-[1.05] uppercase tracking-wide">
               FROM VISION TO REALITY
             </h2>
@@ -91,17 +91,16 @@ export default function Provenprocess() {
           {processes.map((proc, index) => (
             <div
               key={index}
-              className={`w-full ${proc.bgColor} ${proc.textColor} p-6 sm:p-8 flex flex-col justify-between aspect-square relative overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ${
-                index === 0 || index === 2 
-                  ? 'min-h-[290px] sm:min-h-[310px] lg:min-h-[410px] !aspect-auto' 
-                  : 'min-h-[260px] sm:min-h-[280px] lg:min-h-[320px]'
-              }`}
+              className={`w-full ${proc.bgColor} ${proc.textColor} p-6 sm:p-8 flex flex-col justify-between aspect-square relative overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ${index === 0 || index === 2
+                ? 'min-h-[290px] sm:min-h-[310px] lg:min-h-[410px] aspect-auto!'
+                : 'min-h-[260px] sm:min-h-[280px] lg:min-h-[320px]'
+                }`}
             >
-              
+
               {/* Card Top Segment: Outlined Big Number & Category Tag */}
               <div className="w-full flex justify-between items-start">
                 {/* Big Number stylized using Webkit outline for transparency feeling */}
-                <span 
+                <span
                   className={`font-['Anton'] text-[56px] sm:text-[64px] leading-none select-none ${proc.numColor}`}
                   style={{
                     WebkitTextStroke: '1px currentColor',

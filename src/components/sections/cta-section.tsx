@@ -1,15 +1,17 @@
+import { Link } from 'react-router-dom'
+
 export default function CTASection() {
     return (
         <section className="w-full bg-[#EAEAEA]">
             {/* Main outer container mapping exact dynamic boundaries */}
-            <div className="mx-auto relative w-full min-h-[400px] sm:min-h-[500px] md:min-h-[580px] overflow-hidden group">
+            <div className="mx-auto relative w-full min-h-[400px] sm:min-h-[500px] md:min-h-[580px] flex items-center justify-center md:items-end md:justify-start overflow-hidden group">
 
                 {/* ========================================================= */}
                 {/* BACKGROUND LAYER: Parallax/Cover Action Visual Context     */}
                 {/* ========================================================= */}
                 <div className="absolute inset-0 w-full h-full">
                     <img
-                        src="8090ddf1651fad34a1a0a2042e7550b2761975fe.jpg"
+                        src="/8090ddf1651fad34a1a0a2042e7550b2761975fe.jpg"
                         alt="Station Subway Motion Context"
                         className="w-full h-full object-cover"
                     />
@@ -21,25 +23,25 @@ export default function CTASection() {
                 {/* FLOATING TEXT PANEL CARD: Absolute locked layer container */}
                 {/* ========================================================= */}
                 {/* Parent card wrapper matching exact layer layouts */}
-                <div className="absolute left-170 -bottom-40 sm:w-[85%] md:w-[70%] lg:w-[48%] bg-[#3C222D] p-8 sm:p-12 md:p-6 mb-10 min-h-[220px] sm:min-h-[180px] md:min-h-[240px] z-10 overflow-hidden relative">
+                <div className="relative z-10 w-[90%] sm:w-[85%] md:w-[70%] lg:w-[48%] bg-[#000219] p-8 sm:p-12 md:p-10 md:ml-12 lg:ml-24 md:mb-12 lg:mb-16 min-h-[220px] sm:min-h-[180px] md:min-h-[240px] overflow-hidden">
 
                     {/* ========================================================= */}
                     {/* MAIN TEXT CONTENT WRAPPER: Forced to sit ON TOP with z-20 */}
                     {/* ========================================================= */}
                     {/* 1. Isko w-full aur absolute stack par lock kar diya taaki text layer base container ke order se azaad ho jaye */}
                     <div className="w-full relative z-20 pointer-events-auto">
-                        <h2 className="font-['Anton'] font-normal text-[36px] sm:text-[48px] md:text-[56px] lg:text-[66px] text-white leading-[1.02] uppercase tracking-wide mb-8 sm:mb-10">
+                        <h2 className="font-['Anton'] font-normal text-[30px] sm:text-[48px] md:text-[56px] lg:text-[66px] text-white leading-[1.02] uppercase tracking-wide mb-8 sm:mb-10">
                             LET'S CREATE SOMETHING
-                            EXTRAORDINARY<br/> TOGETHER.
+                            EXTRAORDINARY<br /> TOGETHER.
                         </h2>
 
                         {/* Micro Trigger Action Outline Button */}
-                        <a
-                            href="#contact"
+                        <Link
+                            to="/contact"
                             className="inline-flex items-center justify-center font-['Anton'] font-normal text-[12px] text-white bg-transparent border border-[#D4FF00] px-6 py-2.5 uppercase tracking-widest hover:bg-[#D4FF00] hover:text-[#3C222D] transition-all duration-300 relative z-30"
                         >
                             CONTACT US
-                        </a>
+                        </Link>
                     </div>
 
                     {/* ========================================================= */}
@@ -51,8 +53,7 @@ export default function CTASection() {
 
                         {/* Spinning wrapper using responsive speed parameters */}
                         <div
-                            className="w-full h-full animate-spin"
-                            style={{ animationDuration: '12s' }} // Speed yahan se slow/fast kar sakte ho (12s ekdam smooth chalega)
+                            className="w-full h-full"
                         >
                             <img
                                 src="/SVG (2).png"
